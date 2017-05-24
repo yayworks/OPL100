@@ -4,6 +4,8 @@ ADD ./NAE/help.html /etc/NAE/help.html
 
 ADD ./install.tar /usr/local
 
+ADD rc.local /etc/rc.local
+
 COPY ./.bashrc /etc/skel/.bashrc
 
 #add NIMBIX application
