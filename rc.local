@@ -11,5 +11,6 @@
 #
 # By default this script does nothing.
 supervisord -c /etc/supervisor/supervisord.conf
+sudo jupyterhub --config /usr/local/jupyterhub_config.py &
 
 exit 0
