@@ -64,6 +64,13 @@ RUN apt-get install -y php7.0-intl php7.0-mcrypt php-imagick php7.0-xml php7.0-z
 
 RUN a2enmod rewrite headers env dir mime setenvif ssl
 
+RUN apt-get install -y python3-pip
+RUN apt-get install -y npm nodejs-legacy
+RUN npm install -g configurable-http-proxy
+RUN pip3 install jupyterhub
+RUN pip3 install --upgrade notebook
+
+
 #echo "Creating a userid for cur_user and initializing the lab environment"
 
 #sudo /usr/bin/yb-adduser $base_dir $cur_user $session_dur
