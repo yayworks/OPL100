@@ -5,6 +5,7 @@ ADD ./NAE/help.html /etc/NAE/help.html
 ADD ./install.tar /usr/local
 
 ADD rc.local /etc/rc.local
+RUN chmod +x /etc/rc.local
 
 COPY ./.bashrc /etc/skel/.bashrc
 
