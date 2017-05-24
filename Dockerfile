@@ -70,6 +70,8 @@ RUN npm install -g configurable-http-proxy
 RUN pip3 install jupyterhub
 RUN pip3 install --upgrade notebook
 
+RUN jupyterhub --config /usr/local/jupyterhub_config.py &
+
 
 #echo "Creating a userid for cur_user and initializing the lab environment"
 
