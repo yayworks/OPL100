@@ -3,6 +3,8 @@ FROM ipoddaribm/powerai-examples
 ADD ./NAE/help.html /etc/NAE/help.html
 
 ADD ./install.tar /usr/local
+COPY ./jupyterhub_config.py /usr/local/jupyterhub_config.py
+
 
 ADD rc.local /etc/rc.local
 RUN chmod +x /etc/rc.local
@@ -13,7 +15,6 @@ COPY ./.bashrc /etc/skel/.bashrc
 COPY AppDef.json /etc/NAE/AppDef.json
 RUN curl --fail -X POST -d @/etc/NAE/AppDef.json https://api.jarvice.com/jarvice/validate
 
-COPY ./jupyterhub_config.py /usr/local/jupyterhub_config.py
 
 
 WORKDIR /home/nimbix
