@@ -11,6 +11,6 @@
 #
 # By default this script does nothing.
 #supervisord -c /etc/supervisor/supervisord.conf
-/usr/local/bin/jupyterhub --config /usr/local/jupyterhub_config.py &
+xterm -e 'sleep 15 && /usr/local/bin/jupyterhub --config /usr/local/jupyterhub_config.py &'
 
 exit 0
