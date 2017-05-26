@@ -23,6 +23,18 @@ ADD install_wetty.sh /home/nimbix
 RUN chmod +x /home/nimbix/install_wetty.sh
 RUN sudo /home/nimbix/install_wetty.sh
 
+ADD install_XLCompilers.sh /home/nimbix
+RUN chmod +x /home/nimbix/install_XLCompilers.sh
+RUN sudo /home/nimbix/install_XLCompilers.sh
+
+ADD install_LAMP.sh /home/nimbix
+RUN chmod +x /home/nimbix/install_LAMP.sh
+RUN sudo /home/nimbix/install_LAMP.sh
+
+ADD install_jhub.sh /home/nimbix
+RUN chmod +x /home/nimbix/install_jhub.sh
+RUN sudo /home/nimbix/install_jhub.sh
+
 #RUN /usr/bin/wget https://s3.amazonaws.com/yb-lab-cfg/ibm-6.9.1.0-node-v6.9.1-linux-ppc64le.bin
 #RUN /usr/bin/wget  https://s3.amazonaws.com/yb-lab-cfg/admin/yb-admin.NIMBIX.ppc64le.tar
 ##Untar user management executables into /usr/bin directory
