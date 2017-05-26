@@ -51,17 +51,17 @@ RUN sudo sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/' /etc/s
 
 RUN sudo service ssh restart
 
-WORKDIR /home/nimbix
-RUN mkdir -p wetty
+#WORKDIR /home/nimbix
+#RUN mkdir -p wetty
 
-RUN git clone https://github.com/krishnasrinivas/wetty
+#RUN git clone https://github.com/krishnasrinivas/wetty
 
-WORKDIR /home/nimbix/wetty
+#WORKDIR /home/nimbix/wetty
 
-RUN /usr/local/node/bin/npm install
+#RUN /usr/local/node/bin/npm install
 
 ##Programmatically create self-signed certificates
-RUN /usr/bin/yb-gencert yay
+#RUN /usr/bin/yb-gencert yay
 ##Install IBM XL Community Edition C/C++ & Fortran compilers
 
 #RUN wget -q http://public.dhe.ibm.com/software/server/POWER/Linux/xl-compiler/eval/ppc64le/ubuntu/public.gpg -O- | sudo apt-key add -
