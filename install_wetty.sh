@@ -47,7 +47,8 @@ rm ibm-6.9.1.0-node-v6.9.1-linux-ppc64le.bin
 #
 
 ##Install wetty
-mkdir -p wetty
+mkdir -p /home/nimbix/wetty
+cd /home/nimbix
 
 git clone https://github.com/krishnasrinivas/wetty
 
