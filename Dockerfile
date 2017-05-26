@@ -46,24 +46,14 @@ RUN sudo /home/nimbix/install_jhub.sh
 
 RUN echo 'export PATH=/usr/local/node/bin:/usr/local/cuda/bin:/opt/ibm/xlC/13.1.5/bin:/opt/ibm/xlf/15.1.5/bin:$PATH' >> .bashrc
 RUN echo 'export PATH=/usr/local/node/bin:/usr/local/cuda/bin:/opt/ibm/xlC/13.1.5/bin:/opt/ibm/xlf/15.1.5/bin:$PATH' >> /etc/bash.bashrc
-RUN export PATH=/usr/local/node/bin:/usr/local/cuda/bin:/opt/ibm/xlC/13.1.5/bin:/opt/ibm/xlf/15.1.5/bin:$PATH
+
 
 ##Set up login-based access to the system
 RUN sudo sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/' /etc/ssh/sshd_config
 
 RUN sudo service ssh restart
 
-#WORKDIR /home/nimbix
-#RUN mkdir -p wetty
 
-#RUN git clone https://github.com/krishnasrinivas/wetty
-
-#WORKDIR /home/nimbix/wetty
-
-#RUN /usr/local/node/bin/npm install
-
-##Programmatically create self-signed certificates
-#RUN /usr/bin/yb-gencert yay
 ##Install IBM XL Community Edition C/C++ & Fortran compilers
 
 #RUN wget -q http://public.dhe.ibm.com/software/server/POWER/Linux/xl-compiler/eval/ppc64le/ubuntu/public.gpg -O- | sudo apt-key add -
@@ -127,6 +117,20 @@ RUN sudo tar xfpvz ybcloud_v0.92.tar.gz
 #sudo /usr/bin/yb-replinfile $yc_config_file $pubDNS $repl_tag 
 #sudo /usr/bin/yb-replinfile $yc_apache2_conf_file $pubDNS $repl_tag 
 #RUN sudo systemctl restart mysql
-#RUN sudo systemctl restart apache2
+#RUN sudo systemctl restart apache2USER nimbix
+USER nimbix
+ENV PATH /usr/local/node/bin:/usr/local/cuda/bin:/opt/ibm/xlC/13.1.5/bin:/opt/ibm/xlf/15.1.5/bin:$PATH
+WORKDIR /home/nimbix
+RUN mkdir -p wetty
+
+RUN git clone https://github.com/krishnasrinivas/wetty
+
+WORKDIR /home/nimbix/wetty
+
+RUN /usr/local/node/bin/npm install
+
+##Programmatically create self-signed certificates
+RUN /usr/bin/yb-gencert yay
+
 
 
