@@ -2,7 +2,9 @@ FROM ipoddaribm/powerai-examples
 
 ADD ./NAE/help.html /etc/NAE/help.html
 
-ADD ./install.tar /usr/local
+#ADD ./install.tar /usr/local
+COPY ./yb-config-base.sh /usr/local/yb-config-base.sh
+RUN chmod +x /usr/local/yb-config-base.sh
 COPY ./jupyterhub_config.py /usr/local/jupyterhub_config.py
 
 
