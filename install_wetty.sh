@@ -76,7 +76,7 @@ cd wetty
 /usr/bin/yb-gencert yay
 
 ##Start wetty
-sudo /usr/local/node/bin/node app.js --sslkey yay.key --sslcert yay.pem -p 3000 &
+#sudo /usr/local/node/bin/node app.js --sslkey yay.key --sslcert yay.pem -p 3000 &
 
 
 exit 0
