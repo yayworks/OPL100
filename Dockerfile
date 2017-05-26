@@ -60,38 +60,38 @@ RUN sudo service ssh restart
 #RUN /usr/bin/yb-gencert yay
 ##Install IBM XL Community Edition C/C++ & Fortran compilers
 
-RUN wget -q http://public.dhe.ibm.com/software/server/POWER/Linux/xl-compiler/eval/ppc64le/ubuntu/public.gpg -O- | sudo apt-key add -
-RUN echo "deb http://public.dhe.ibm.com/software/server/POWER/Linux/xl-compiler/eval/ppc64le/ubuntu/ trusty main" | sudo tee /etc/apt/sources.list.d/ibm-xl-compiler-eval.list
-RUN sudo apt-get update
+#RUN wget -q http://public.dhe.ibm.com/software/server/POWER/Linux/xl-compiler/eval/ppc64le/ubuntu/public.gpg -O- | sudo apt-key add -
+#RUN echo "deb http://public.dhe.ibm.com/software/server/POWER/Linux/xl-compiler/eval/ppc64le/ubuntu/ trusty main" | sudo tee /etc/apt/sources.list.d/ibm-xl-compiler-eval.list
+#RUN sudo apt-get update
 #
-RUN sudo apt-get install -y xlc.13.1.5
+#RUN sudo apt-get install -y xlc.13.1.5
 #
 #RUN sudo /opt/ibm/xlC/13.1.5/bin/xlc_configure <<EOF
 #1
 #EOF
 
-RUN sudo apt-get install -y xlf.15.1.5
+#RUN sudo apt-get install -y xlf.15.1.5
 
 #RUN sudo /opt/ibm/xlf/15.1.5/bin/xlf_configure <<EOF
 #1
 #EOF
 
-RUN apt-get update
-RUN apt-get install -y apache2 mariadb-server libapache2-mod-php7.0
+#RUN apt-get update
+#RUN apt-get install -y apache2 mariadb-server libapache2-mod-php7.0
 
-RUN apt-get install -y php7.0-gd php7.0-json php7.0-mysql php7.0-curl php7.0-mbstring
+#RUN apt-get install -y php7.0-gd php7.0-json php7.0-mysql php7.0-curl php7.0-mbstring
 
-RUN apt-get install -y php7.0-intl php7.0-mcrypt php-imagick php7.0-xml php7.0-zip
+#RUN apt-get install -y php7.0-intl php7.0-mcrypt php-imagick php7.0-xml php7.0-zip
 
-RUN a2enmod rewrite headers env dir mime setenvif ssl
+#RUN a2enmod rewrite headers env dir mime setenvif ssl
 
-RUN apt-get install -y python3-pip
-RUN apt-get install -y npm nodejs-legacy
-RUN npm install -g configurable-http-proxy
-RUN pip3 install jupyterhub
-RUN pip3 install --upgrade notebook
+#RUN apt-get install -y python3-pip
+#RUN apt-get install -y npm nodejs-legacy
+#RUN npm install -g configurable-http-proxy
+#RUN pip3 install jupyterhub
+#RUN pip3 install --upgrade notebook
 
-RUN jupyterhub --config /usr/local/jupyterhub_config.py &
+#RUN jupyterhub --config /usr/local/jupyterhub_config.py &
 
 
 #echo "Creating a userid for cur_user and initializing the lab environment"
