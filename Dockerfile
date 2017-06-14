@@ -19,10 +19,10 @@ RUN curl --fail -X POST -d @/etc/NAE/AppDef.json https://api.jarvice.com/jarvice
 
 WORKDIR /home/nimbix
 
-ADD install_wetty.sh /home/nimbix
-ADD install_XLCompilers.sh /home/nimbix
-ADD install_LAMP.sh /home/nimbix
-ADD install_jhub.sh /home/nimbix
+COPY install_wetty.sh /home/nimbix/install_wetty.sh
+COPY install_XLCompilers.sh /home/nimbix/install_XLCompilers.sh
+COPY install_LAMP.sh /home/nimbix/install_LAMP.sh
+COPY install_jhub.sh /home/nimbix/install_jhub.sh
 
 RUN chmod +x /home/nimbix/install_wetty.sh \
 &&  sudo /home/nimbix/install_wetty.sh \
