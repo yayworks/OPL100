@@ -45,7 +45,7 @@ RUN chmod +x /home/nimbix/install_wetty.sh \
 
 && cd wetty \
 
-&& /usr/local/node/bin/npm install \
+##&& /usr/local/node/bin/npm install \
 
 && sudo sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/' /etc/ssh/sshd_config \
 
