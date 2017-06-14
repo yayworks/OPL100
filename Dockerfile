@@ -30,11 +30,11 @@ RUN chmod +x /home/nimbix/install_wetty.sh \
 &&  chmod +x /home/nimbix/install_XLCompilers.sh \
 &&  sudo /home/nimbix/install_XLCompilers.sh \
 
-&&  chmod +x /home/nimbix/install_LAMP.sh \
-&&  sudo /home/nimbix/install_LAMP.sh \
+##&&  chmod +x /home/nimbix/install_LAMP.sh \
+##&&  sudo /home/nimbix/install_LAMP.sh \
 
-&&  chmod +x /home/nimbix/install_jhub.sh \
-&&  sudo /home/nimbix/install_jhub.sh \
+##&&  chmod +x /home/nimbix/install_jhub.sh \
+##&&  sudo /home/nimbix/install_jhub.sh \
 
 &&  echo 'export PATH=/usr/local/node/bin:/usr/local/cuda/bin:/opt/ibm/xlC/13.1.5/bin:/opt/ibm/xlf/15.1.5/bin:$PATH' >> .bashrc \
 &&  echo 'export PATH=/usr/local/node/bin:/usr/local/cuda/bin:/opt/ibm/xlC/13.1.5/bin:/opt/ibm/xlf/15.1.5/bin:$PATH' >> /etc/bash.bashrc \
