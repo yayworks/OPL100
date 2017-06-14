@@ -56,5 +56,5 @@ export PATH=/usr/local/node/bin:/usr/local/cuda/bin:$PATH
 
 #/usr/local/node/bin/npm install
 
-exit 0
+##exit 0
 
