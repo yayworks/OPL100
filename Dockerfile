@@ -44,8 +44,6 @@ RUN chmod +x /home/nimbix/install_wetty.sh \
 && sudo service ssh restart \
 
 
-##Install wetty
-&& cd /home/nimbix \
 && mkdir -p /home/nimbix/wetty \
 
 && git clone https://github.com/krishnasrinivas/wetty \
