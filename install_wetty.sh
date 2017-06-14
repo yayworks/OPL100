@@ -47,8 +47,8 @@ rm ibm-6.9.1.0-node-v6.9.1-linux-ppc64le.bin
 #
 export PATH=/usr/local/node/bin:/usr/local/cuda/bin:$PATH
 ##Install wetty
-mkdir -p /home/nimbix/wetty
 cd /home/nimbix
+mkdir -p /home/nimbix/wetty
 
 git clone https://github.com/krishnasrinivas/wetty
 
