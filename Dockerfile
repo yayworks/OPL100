@@ -27,6 +27,12 @@ COPY ./install_jhub.sh /home/nimbix/install_jhub.sh
 RUN chmod +x /home/nimbix/install_wetty.sh \
 &&   sudo /home/nimbix/install_wetty.sh \
 
+&& mkdir -p /home/nimbix/wetty \
+&& git clone https://github.com/krishnasrinivas/wetty \
+&& cd wetty \
+&& /usr/local/node/bin/npm install \
+
+
 &&  chmod +x /home/nimbix/install_XLCompilers.sh \
 &&  sudo /home/nimbix/install_XLCompilers.sh \
 
@@ -39,13 +45,6 @@ RUN chmod +x /home/nimbix/install_wetty.sh \
 &&  echo 'export PATH=/usr/local/node/bin:/usr/local/cuda/bin:/opt/ibm/xlC/13.1.5/bin:/opt/ibm/xlf/15.1.5/bin:$PATH' >> .bashrc \
 &&  echo 'export PATH=/usr/local/node/bin:/usr/local/cuda/bin:/opt/ibm/xlC/13.1.5/bin:/opt/ibm/xlf/15.1.5/bin:$PATH' >> /etc/bash.bashrc \
 
-&& mkdir -p /home/nimbix/wetty \
-
-&& git clone https://github.com/krishnasrinivas/wetty \
-
-&& cd wetty \
-
-##&& /usr/local/node/bin/npm install \
 
 && sudo sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/' /etc/ssh/sshd_config \
 
