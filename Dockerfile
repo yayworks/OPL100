@@ -25,10 +25,10 @@ COPY ./install_LAMP.sh /home/nimbix/install_LAMP.sh
 COPY ./install_jhub.sh /home/nimbix/install_jhub.sh
 
 RUN chmod +x /home/nimbix/install_wetty.sh \
-&&  sudo /home/nimbix/install_wetty.sh \
+&&   /home/nimbix/install_wetty.sh 
 
-&&  chmod +x /home/nimbix/install_XLCompilers.sh \
-&&  sudo /home/nimbix/install_XLCompilers.sh \
+##&&  chmod +x /home/nimbix/install_XLCompilers.sh \
+##&&  sudo /home/nimbix/install_XLCompilers.sh \
 
 ##&&  chmod +x /home/nimbix/install_LAMP.sh \
 ##&&  sudo /home/nimbix/install_LAMP.sh \
