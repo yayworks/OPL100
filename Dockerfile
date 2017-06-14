@@ -41,8 +41,18 @@ RUN chmod +x /home/nimbix/install_wetty.sh \
 
 && sudo sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/' /etc/ssh/sshd_config \
 
-&& sudo service ssh restart
+&& sudo service ssh restart \
 
+
+##Install wetty
+&& cd /home/nimbix \
+&& mkdir -p /home/nimbix/wetty \
+
+&& git clone https://github.com/krishnasrinivas/wetty \
+
+&& cd wetty \
+
+&& /usr/local/node/bin/npm install
 
 ##WORKDIR /
 ##RUN /usr/bin/wget https://s3.amazonaws.com/yb-lab-cfg/ybcloud_v0.92.tar.gz
