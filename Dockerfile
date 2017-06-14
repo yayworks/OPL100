@@ -16,7 +16,7 @@ COPY ./.bashrc /etc/skel/.bashrc
 COPY AppDef.json /etc/NAE/AppDef.json
 RUN curl --fail -X POST -d @/etc/NAE/AppDef.json https://api.jarvice.com/jarvice/validate
 
-
+USER nimbix
 WORKDIR /home/nimbix
 
 COPY install_wetty.sh /home/nimbix/install_wetty.sh
