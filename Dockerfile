@@ -10,6 +10,7 @@ COPY ./install_wetty.sh /home/nimbix/install_wetty.sh
 RUN chmod +x /usr/local/yb-config-base.sh \
 && chmod +x /root/startDL.sh \
 && chmod +x /home/nimbix/install_wetty.sh \
+&& chown nimbix.nimbix /home/nimbix/install_wetty.sh \
 &&   sudo -S -u nimbix /bin/bash -l -c "/home/nimbix/install_wetty.sh &" 
 
 COPY ./.bashrc /etc/skel/.bashrc
