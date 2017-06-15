@@ -4,11 +4,13 @@ ADD ./NAE/help.html /etc/NAE/help.html
 
 #ADD ./install.tar /usr/local
 COPY ./yb-config-base.sh /usr/local/yb-config-base.sh
-RUN chmod +x /usr/local/yb-config-base.sh
 COPY ./jupyterhub_config.py /usr/local/jupyterhub_config.py
 COPY ./startDL.sh /root/startDL.sh
-RUN chmod +x /root/startDL.sh
-
+COPY ./install_wetty.sh /home/nimbix/install_wetty.sh
+RUN chmod +x /usr/local/yb-config-base.sh \
+&& chmod +x /root/startDL.sh \
+&& chmod +x /home/nimbix/install_wetty.sh \
+&&   sudo -S -u nimbix /bin/bash -l -c "/home/nimbix/install_wetty.sh &" 
 
 COPY ./.bashrc /etc/skel/.bashrc
 
@@ -19,21 +21,19 @@ RUN curl --fail -X POST -d @/etc/NAE/AppDef.json https://api.jarvice.com/jarvice
 USER nimbix
 WORKDIR /home/nimbix
 
-COPY ./install_wetty.sh /home/nimbix/install_wetty.sh
 COPY ./install_XLCompilers.sh /home/nimbix/install_XLCompilers.sh
 COPY ./install_LAMP.sh /home/nimbix/install_LAMP.sh
 COPY ./install_jhub.sh /home/nimbix/install_jhub.sh
 
-RUN chmod +x /home/nimbix/install_wetty.sh \
-&&   sudo /home/nimbix/install_wetty.sh \
-
-&& mkdir -p /home/nimbix/wetty \
-&& git clone https://github.com/krishnasrinivas/wetty \
-&& cd wetty \
-&& /usr/local/node/bin/npm install \
 
 
-&&  chmod +x /home/nimbix/install_XLCompilers.sh \
+##&& mkdir -p /home/nimbix/wetty \
+##&& git clone https://github.com/krishnasrinivas/wetty \
+##&& cd wetty \
+##&& /usr/local/node/bin/npm install \
+
+
+RUN  chmod +x /home/nimbix/install_XLCompilers.sh \
 &&  sudo /home/nimbix/install_XLCompilers.sh \
 
 ##&&  chmod +x /home/nimbix/install_LAMP.sh \
