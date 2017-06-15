@@ -42,10 +42,9 @@ RUN chmod +x /home/nimbix/install_wetty.sh \
 
 ##&& sudo service ssh restart 
 
-
-##WORKDIR /
-##RUN /usr/bin/wget https://s3.amazonaws.com/yb-lab-cfg/ybcloud_v0.92.tar.gz
-##RUN sudo tar xfpvz ybcloud_v0.92.tar.gz
+WORKDIR /
+RUN /usr/bin/wget https://s3.amazonaws.com/yb-lab-cfg/ybcloud_v0.92.tar.gz \
+&& sudo tar xfpvz ybcloud_v0.92.tar.gz
 
 
 
