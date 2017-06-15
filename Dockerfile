@@ -2,12 +2,12 @@ FROM ipoddaribm/powerai-examples
 
 ADD ./NAE/help.html /etc/NAE/help.html
 
-COPY ./yb-config-base.sh /usr/local/yb-config-base.sh
+##COPY ./yb-config-base.sh /usr/local/yb-config-base.sh
 COPY ./jupyterhub_config.py /usr/local/jupyterhub_config.py
 COPY ./startDL.sh /root/startDL.sh
 
-RUN chmod +x /usr/local/yb-config-base.sh \
-&&  chmod +x /root/startDL.sh 
+##RUN chmod +x /usr/local/yb-config-base.sh \
+RUN  chmod +x /root/startDL.sh 
 
 COPY ./.bashrc /etc/skel/.bashrc
 
