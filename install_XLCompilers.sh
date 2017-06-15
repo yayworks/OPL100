@@ -37,5 +37,5 @@ sudo /opt/ibm/xlf/15.1.5/bin/xlf_configure <<EOF
 EOF
 
 
-exit 0
+#exit 0
 
