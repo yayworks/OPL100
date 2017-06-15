@@ -52,7 +52,7 @@ rm ibm-6.9.1.0-node-v6.9.1-linux-ppc64le.bin
 
 #git clone https://github.com/krishnasrinivas/wetty
 
-c#d wetty
+#cd wetty
 
 #/usr/local/node/bin/npm install
 
