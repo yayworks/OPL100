@@ -31,7 +31,8 @@ RUN chmod +x /home/nimbix/install_wetty.sh \
 
 && sudo /home/nimbix/install_wetty.sh \
 && sudo /home/nimbix/install_XLCompilers.sh \
-
+&&  sudo /home/nimbix/install_LAMP.sh \
+&&  sudo /home/nimbix/install_jhub.sh \
 
 &&  sudo echo 'export PATH=/usr/local/node/bin:/usr/local/cuda/bin:/opt/ibm/xlC/13.1.5/bin:/opt/ibm/xlf/15.1.5/bin:$PATH' >> .bashrc \
 &&  sudo echo 'export PATH=/usr/local/node/bin:/usr/local/cuda/bin:/opt/ibm/xlC/13.1.5/bin:/opt/ibm/xlf/15.1.5/bin:$PATH' >> /etc/bash.bashrc \
@@ -40,8 +41,7 @@ RUN chmod +x /home/nimbix/install_wetty.sh \
 && sudo sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/' /etc/ssh/sshd_config 
 
 ##&& sudo service ssh restart 
-##&&  sudo /home/nimbix/install_LAMP.sh \
-##&&  sudo /home/nimbix/install_jhub.sh \
+
 
 ##WORKDIR /
 ##RUN /usr/bin/wget https://s3.amazonaws.com/yb-lab-cfg/ybcloud_v0.92.tar.gz
