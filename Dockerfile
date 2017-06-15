@@ -7,7 +7,7 @@ COPY ./jupyterhub_config.py /usr/local/jupyterhub_config.py
 COPY ./startDL.sh /root/startDL.sh
 
 RUN chmod +x /usr/local/yb-config-base.sh \
-&& chmod +x /root/startDL.sh 
+&&  chmod +x /root/startDL.sh 
 
 COPY ./.bashrc /etc/skel/.bashrc
 
@@ -33,8 +33,8 @@ RUN chmod +x /home/nimbix/install_wetty.sh \
 && sudo /home/nimbix/install_XLCompilers.sh \
 
 
-&&  echo 'export PATH=/usr/local/node/bin:/usr/local/cuda/bin:/opt/ibm/xlC/13.1.5/bin:/opt/ibm/xlf/15.1.5/bin:$PATH' >> .bashrc \
-&&  echo 'export PATH=/usr/local/node/bin:/usr/local/cuda/bin:/opt/ibm/xlC/13.1.5/bin:/opt/ibm/xlf/15.1.5/bin:$PATH' >> /etc/bash.bashrc \
+&&  sudo echo 'export PATH=/usr/local/node/bin:/usr/local/cuda/bin:/opt/ibm/xlC/13.1.5/bin:/opt/ibm/xlf/15.1.5/bin:$PATH' >> .bashrc \
+&&  sudo echo 'export PATH=/usr/local/node/bin:/usr/local/cuda/bin:/opt/ibm/xlC/13.1.5/bin:/opt/ibm/xlf/15.1.5/bin:$PATH' >> /etc/bash.bashrc \
 
 
 && sudo sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/' /etc/ssh/sshd_config 
