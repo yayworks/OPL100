@@ -1,0 +1,6 @@
+#!/bin/bash
+#
+sleep 2
+shutdown -h now
+
+exit 0
