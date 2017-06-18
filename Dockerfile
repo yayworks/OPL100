@@ -6,10 +6,14 @@ ADD ./NAE/help.html /etc/NAE/help.html
 COPY ./jupyterhub_config.py /usr/local/jupyterhub_config.py
 COPY ./startDL.sh /root/startDL.sh
 COPY ./sysshut /usr/local/bin/sysshut
+COPY ./crypten /usr/local/bin/crypten
+COPY ./cryptde /usr/local/bin/cryptde
 
 ##RUN chmod +x /usr/local/yb-config-base.sh \
 RUN  chmod +x /root/startDL.sh \
 &&   chmod +x /usr/local/bin/sysshut
+&&   chmod +x /usr/local/bin/crypten
+&&   chmod +x /usr/local/bin/cryptde
 
 COPY ./.bashrc /etc/skel/.bashrc
 
