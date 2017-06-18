@@ -3,6 +3,7 @@
 # crypten - a script to encrypt files using openssl
 
 FNAME=$1
+pass=$2
 
 if [[ -z "$FNAME" ]]; then
     echo "crypten <name of file>"
@@ -10,4 +11,4 @@ if [[ -z "$FNAME" ]]; then
     exit;
 fi
 
-openssl des3 -salt -in "$FNAME" -out "$FNAME.des3"
+openssl des3 -salt -pass pass:${pass} -in "$FNAME" -out "$FNAME.des3"
