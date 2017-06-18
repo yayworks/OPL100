@@ -11,8 +11,8 @@ COPY ./cryptde /usr/local/bin/cryptde
 
 ##RUN chmod +x /usr/local/yb-config-base.sh \
 RUN  chmod +x /root/startDL.sh \
-&&   chmod +x /usr/local/bin/sysshut
-&&   chmod +x /usr/local/bin/crypten
+&&   chmod +x /usr/local/bin/sysshut \
+&&   chmod +x /usr/local/bin/crypten \
 &&   chmod +x /usr/local/bin/cryptde
 
 COPY ./.bashrc /etc/skel/.bashrc
