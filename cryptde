@@ -3,6 +3,7 @@
 # cryptde - a script to decrypt files using openssl
 
 FNAME=$1
+pass=$2
 
 if [[ -z "$FNAME" ]]; then
     echo "cryptde <name of file>"
@@ -10,4 +11,4 @@ if [[ -z "$FNAME" ]]; then
     exit;
 fi
 
-openssl des3 -d -salt -in "$FNAME" -out "${FNAME%.[^.]*}"
+openssl des3 -d -salt -pass pass:${pass} -in "$FNAME" -out "${FNAME%.[^.]*}"
