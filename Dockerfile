@@ -5,9 +5,11 @@ ADD ./NAE/help.html /etc/NAE/help.html
 ##COPY ./yb-config-base.sh /usr/local/yb-config-base.sh
 COPY ./jupyterhub_config.py /usr/local/jupyterhub_config.py
 COPY ./startDL.sh /root/startDL.sh
+COPY ./sysshut /usr/local/bin/sysshut
 
 ##RUN chmod +x /usr/local/yb-config-base.sh \
-RUN  chmod +x /root/startDL.sh 
+RUN  chmod +x /root/startDL.sh \
+&&   chmod +x /usr/local/bin/sysshut
 
 COPY ./.bashrc /etc/skel/.bashrc
 
