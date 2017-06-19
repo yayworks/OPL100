@@ -13,7 +13,7 @@ then
 	#echo $file_crypt
 	/usr/local/bin/cryptde  $file_crypt $pass
         #echo $file
-        sudo tar xfpvz $file
+        sudo tar xfpvz $file -C /
         sudo rm $file
 	#ls -ltr  /data/save
 fi
