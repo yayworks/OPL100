@@ -8,12 +8,16 @@ COPY ./startDL.sh /root/startDL.sh
 COPY ./sysshut /usr/local/bin/sysshut
 COPY ./crypten /usr/local/bin/crypten
 COPY ./cryptde /usr/local/bin/cryptde
+COPY ./datasav /usr/local/bin/datasav
+COPY ./datares /usr/local/bin/datares
 
 ##RUN chmod +x /usr/local/yb-config-base.sh \
 RUN  chmod +x /root/startDL.sh \
 &&   chmod +x /usr/local/bin/sysshut \
 &&   chmod +x /usr/local/bin/crypten \
-&&   chmod +x /usr/local/bin/cryptde
+&&   chmod +x /usr/local/bin/cryptde \
+&&   chmod +x /usr/local/bin/datasav \
+&&   chmod +x /usr/local/bin/datares
 
 COPY ./.bashrc /etc/skel/.bashrc
 
