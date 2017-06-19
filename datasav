@@ -1,0 +1,16 @@
+
+#!/bin/bash
+
+USER=$1
+pass=$2
+
+sudo tar cfpvz /data/save/${USER}.tar.gz /home/${USER}
+
+/usr/local/bin/crypten /data/save/${USER}.tar.gz $pass
+
+sudo rm /data/save/${USER}.tar.gz
+
+#ls -ltr /data/save
+
+
+exit 0
