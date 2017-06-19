@@ -14,7 +14,6 @@ then
 	/usr/local/bin/cryptde  $file_crypt $pass
         #echo $file
         sudo tar xfpvz $file
-        sudo rm $file_crypt
         sudo rm $file
 	#ls -ltr  /data/save
 fi
