@@ -1,0 +1,23 @@
+
+#!/bin/bash
+
+USER=$1
+pass=$2
+
+file_crypt="/data/save/${USER}.tar.gz.des3"
+file="/data/save/${USER}.tar.gz"
+#ls -ltr  /data/save
+
+if [ -f "$file_crypt" ] 
+then
+	#echo $file_crypt
+	/usr/local/bin/cryptde  $file_crypt $pass
+        #echo $file
+        sudo tar xfpvz $file
+        sudo rm $file_crypt
+        sudo rm $file
+	#ls -ltr  /data/save
+fi
+
+
+exit 0
